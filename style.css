@@ -159,7 +159,7 @@ body.about-page {
 }
 
 .about-text {
-  max-width: 600px; /* keep paragraph readable */
+  max-width: 600px; 
 }
 
 .corner-wrapper {
@@ -245,6 +245,36 @@ text-decoration: none;
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
+  .center-image {
+    max-width: 300px; 
+  }
+  .about-text {
+    max-width: 90%; 
+    font-size: 1rem; 
+  }
+  h1, h2, h3, h4 {
+    font-size: 1.8rem; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  body.about-page {
+    padding: 10px;
+  }
+  .center-image {
+    max-width: 200px;
+  }
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  h1, h2, h3, h4 {
+    font-size: 1.5rem;
+  }
 }
 
 
