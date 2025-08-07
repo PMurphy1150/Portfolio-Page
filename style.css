@@ -1,12 +1,15 @@
 html {background-color: #FFFFFF;}
-body 
+
   
-  @font-face {
-  font-family: 'Helvetica Neue Bold', sans-serif;
-   src: url('fonts/HelveticaNeue-Bold.woff2') format('woff2');
-  margin: 10px;
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url('fonts/HelveticaNeue-Bold.woff2') format('woff2');
 }
 
+body {
+  font-family: 'Helvetica Neue Bold', sans-serif;
+  margin: 10px;
+}
 
 
 
@@ -115,9 +118,9 @@ body
 
 body.home-page {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
-  height: 100vh;            
+  flex-direction: column;  
+  align-items: center; 
+  height: 100vh;                
   margin: 0;
   padding-top: 30px;
   font-family: 'Helvetica Neue Bold', sans-serif;
@@ -153,7 +156,7 @@ body.about-page {
 }
 
 .center-image {
-  max-width: 400px; /* adjust image size */
+  max-width: 400px; 
   height: auto;
   margin-bottom: 20px;
 }
@@ -174,7 +177,7 @@ body.about-page {
 
 .corner-wrapper-right {
   position: fixed;
-  bottom: 1px;
+  bottom: 10px;
   right: 1550px;
   display: flex;
   flex-direction: column;     
@@ -221,11 +224,11 @@ text-decoration: none;
   bottom: 40px; 
   left: 10px;  
   overflow: hidden;
-  width: 1200px;        
+  width: 60%;        
   height: 1.5em;      
-  background-color: none
-  color: white;
-  font-family: 'Helvetica Neue Bold' sans-serif;
+  background-color: transparent;
+  color: black;
+  font-family: 'Helvetica Neue Bold', sans-serif;
   font-size: 1em;
   line-height: 1.5em;
   border-radius: 4px;
@@ -247,40 +250,65 @@ text-decoration: none;
   100% { transform: translateX(-100%); }
 }
 
-@media (max-width: 768px) {
-  .center-image {
-    max-width: 300px; 
-  }
-  .about-text {
-    max-width: 90%; 
-    font-size: 1rem; 
-  }
-  h1, h2, h3, h4 {
-    font-size: 1.8rem; 
+@media (max-width: 1024px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
+@media (max-width: 768px) {
+  h1, h2, h3, h4 {
+    font-size: 32px;
+  }
 
-@media (max-width: 480px) {
-  body.about-page {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     padding: 10px;
   }
+
   .center-image {
-    max-width: 200px;
+    max-width: 90%;
   }
+
   .about-text {
-    font-size: 0.95rem;
-    line-height: 1.4;
+    width: 90%;
+    font-size: 1rem;
   }
-  h1, h2, h3, h4 {
-    font-size: 1.5rem;
+
+  .bottom-ticker {
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  .corner-wrapper,
+  .corner-wrapper-right {
+    display: none;
   }
 }
 
+@media (max-width: 480px) {
+  h1, h2, h3, h4 {
+    font-size: 24px;
+  }
 
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 5px;
+  }
 
+  .bottom-ticker {
+    font-size: 0.8em;
+    width: 95%;
+  }
 
+  .center-image {
+    max-width: 90%;
+  }
 
-
-
-
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
